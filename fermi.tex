@@ -1,0 +1,295 @@
+\documentclass{article}
+
+\usepackage[left=1cm,top=1.2cm,right=1cm,bottom=1.2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{float}
+
+\newcommand\logten{\ensuremath{\log_{10}}}
+\DeclareSIUnit\year{year}
+
+\begin{document}
+
+\title{Fermi}
+\date{\today}
+\author{Adrian}
+\maketitle
+
+\tableofcontents
+
+\section{Prelude}
+Hmmmmm.
+
+\clearpage
+
+\section{Logarithms and Exponents}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{X X || X X}
+		Logarithms & Value & Powers & Value\\
+		\hline
+		$\logten 2$ & $0.30$ & $10^{0.1}$ & $1.26$ \\
+		$\logten 3$ & $0.48$ & $10^{0.2}$ & $1.58$ \\
+		$\logten 4$ & $0.60$ & $10^{0.3}$ & $2.00$ \\
+		$\logten 5$ & $0.70$ & $10^{0.4}$ & $2.51$ \\
+		$\logten 6$ & $0.78$ & $10^{0.5}$ & $3.14$ \\
+		$\logten 7$ & $0.85$ & $10^{0.6}$ & $3.98$ \\
+		$\logten 8$ & $0.90$ & $10^{0.7}$ & $5.01$ \\
+		$\logten 9$ & $0.95$ & $10^{0.8}$ & $6.31$ \\
+		            &        & $10^{0.9}$ & $7.94$ \\
+	\end{tabularx}
+\end{table}
+
+
+\section{Physics Olympics}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X }
+		Constant & Value & Details \\
+		\hline
+		Planck's constant & $h = \SI[per-mode=symbol]{6.63E-34}{\J\s}$ & $E = hv$ \\
+		Mass of electron & $m_e = \SI[per-mode=symbol]{9.11E-31}{\kg}$ & \\
+		Mass of proton & $m_p = \SI[per-mode=symbol]{1.67E-27}{\kg}$ & \\
+		Elementary charge & $e = \SI[per-mode=symbol]{1.60E-19}{\coulomb}$ & \\
+		Radius of earth & $r_{earth} = \SI[per-mode=symbol]{6.38E6}{\m}$ & \\
+		Mass of earth & $m_{earth} = \SI[per-mode=symbol]{5.98E24}{\kg}$ & \\
+		Radius of sun & $r_{sun} = \SI[per-mode=symbol]{}{\m}$ & \\
+		Mass of sun & $m_{sun} = \SI[per-mode=symbol]{1.98E30}{\kg}$ & \\
+		Radius of moon & $r_{moon} = \SI[per-mode=symbol]{1.74E6}{\m}$ & \\
+		Mass of moon & $m_{moon} = \SI[per-mode=symbol]{7.35E22}{\kg}$ & \\
+		Astronomical Unit & $AU = \SI[per-mode=symbol]{1.50E11}{\m}$ & \\
+		Distance from earth to moon & $d_{earth to moon} = \SI[per-mode=symbol]{3.84E6}{\m}$ & \\
+		Seconds in a day & $s_{day} = \SI[per-mode=symbol]{8.64E4}{\s}$ & \\
+		Seconds in a month & $s_{month} = \SI[per-mode=symbol]{2.62E6}{\s}$ & \\
+		Seconds in a year & $s_{year} = \SI[per-mode=symbol]{3.16E7}{\s}$ & \\
+	\end{tabularx}
+\end{table}
+
+\section{Lengths}
+Hmmmmm.
+
+\section{Forces}
+Hmmmmm.
+
+\section{Energy}
+\subsection{General Facts}
+	\begin{itemize}
+		\item $\SI{1}{\kilo\watt\hour} = \SI{3.6E6}{\joule}$
+		\item $\SI{1}{\watt\year} = \SI{8.74}{\kilo\watt\hour}$
+		\item Average cost: 14 cents per kilowatt-hour
+		\item Average home usage per year: \SI{11280}{\kilo\watt\hour}
+		\item Average home usage per month: \SI{950}{\kilo\watt\hour}
+		\item Average home usage per day: \SI{31}{\kilo\watt\hour}
+	\end{itemize}
+\subsection{Electronics}
+	\begin{itemize}
+		\item iPhone battery: \SI{1570}{\milli\ampere\hour} at \SI{3.7}{\volt} (\SI{5.92}{\watt\hour})
+		\item iPhone power consumption (idle -- 250 hours): \SI{23.7}{\milli\watt}
+		\item iPhone power consumption (talk/internet/video -- 10 hours): \SI{592}{\milli\watt}
+		\item iPhone power consumption (audio -- 40 hours): \SI{148}{\milli\watt}
+		\item iPad battery: \SI{8827}{\milli\ampere\hour} (\SI{118}{\kilo\joule}) at \SI{3.7}{\volt} (\SI{32.9}{\watt\hour})
+		\item iPad conversion example: $\SI{32.9}{\watt\hour} \approx \SI{8827}{\milli\ampere\hour} * \SI{3.7}{V} * (\SI{1}{\ampere} / \SI{1000}{\milli\ampere})$
+		\item iPad conversion example: $\SI{118}{\kilo\joule} \approx \SI{32.9}{\watt\hour} * (\SI{3600}{\s} / \SI{1}{\hour}) * (\SI{1}{\kilo\joule} / \SI{1000}{\joule})$
+		\item (WARN) Voltage in a mobile phone circuit: \SI{0.5}{\volt} to \SI{1}{\volt}
+		\item (WARN) Current in a mobile phone circuit: \SI{100}{\milli\ampere} to \SI{180}{\milli\ampere}
+	\end{itemize}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X }
+		Appliance & Power Consumption \\
+		\hline
+		Light bulb & \SI{2}{\watt} to \SI{120}{\watt} \\
+		Desktop & \SI{250}{\watt} to \SI{720}{\watt} \\
+		Laptop & \SI{250}{\watt} \\
+		(WARN) Coffee maker & \SI{800}{\watt} \\
+		(WARN) Microwave & \SI{600}{\watt} to \SI{1500}{\watt} \\
+		(WARN) Dishwasher & \SI{1200}{\watt} to \SI{1500}{\watt} \\
+		(WARN) Washing machine & \SI{300}{\watt} to \SI{500}{\watt} \\
+		(WARN) Iron & \SI{1000}{\watt} \\
+		(WARN) Air conditioner & \SI{2000}{\watt} to \SI{5000}{\watt} \\
+		(WARN) Ceiling fan & \SI{10}{\watt} to \SI{50}{\watt} \\
+		(WARN) TV & \SI{150}{\watt} \\
+		(WARN) Oven & \SI{3000}{\watt} \\
+	\end{tabularx}
+\end{table}
+
+\section{Electromagnetic Spectrum}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X X X }
+		Type & Wavelength & Frequency & Energy & Reference \\
+		\hline
+		Radio & $\SI{1E3}{\m}$ & $\SI{1E4}{\hertz}$ & & \\
+		Microwave & $\SI{1E-2}{\m}$ & $\SI{1E10}{\hertz}$ & & \\
+		Infared & $\SI{1E-5}{\m}$ & $\SI{1E13}{\hertz}$ & & \\
+		Visible & $\SI{5E-7}{\m}$ & $\SI{1E15}{\hertz}$ & & \\
+		Ultraviolet & $\SI{1E-8}{\m}$ & $\SI{1E16}{\hertz}$ & & \\
+		X-ray & $\SI{1E-10}{\m}$ & $\SI{1E18}{\hertz}$ & & \\
+		Gamma & $\SI{1E-12}{\m}$ & $\SI{1E20}{\hertz}$ & & \\
+	\end{tabularx}
+\end{table}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{ X X X X X }
+		Colour & Wavelength & Frequency & Energy & Reference \\
+		\hline
+		Violet & $\SI{380E-9}{\m}$ to $\SI{450E-9}{\m}$ & $\SI{668E12}{\hertz}$ to $\SI{789E12}{\hertz}$ & & \\
+		Blue & $\SI{450E-9}{\m}$ to $\SI{495E-9}{\m}$ & $\SI{606E12}{\hertz}$ to $\SI{668E12}{\hertz}$ & & \\
+		Green & $\SI{495E-9}{\m}$ to $\SI{570E-9}{\m}$ & $\SI{526E12}{\hertz}$ to $\SI{606E12}{\hertz}$ & & \\
+		Yellow & $\SI{570E-9}{\m}$ to $\SI{590E-9}{\m}$ & $\SI{508E12}{\hertz}$ to $\SI{526E12}{\hertz}$ & & \\
+		Orange & $\SI{590E-9}{\m}$ to $\SI{620E-9}{\m}$ & $\SI{484E12}{\hertz}$ to $\SI{508E12}{\hertz}$ & & \\
+		Red & $\SI{620E-9}{\m}$ to $\SI{750E-9}{\m}$ & $\SI{400E12}{\hertz}$ to $\SI{484E12}{\hertz}$ & & \\
+	\end{tabularx}
+\end{table}
+\subsection{Other Facts}
+	\begin{itemize}
+		\item Wifi: $\SI{2.4}{\giga\hertz}$ to $\SI{5}{\giga\hertz}$
+		\item Cellular frequencies: $\SI{900}{\mega\hertz}$ in Europe and Asia; $\SI{1900}{\mega\hertz}$ in the USA
+	\end{itemize}
+
+\section{Demographics}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X }
+		Location & Population & Known For \\
+		\hline
+		Canada & 35.16 million & \\
+		USA & 313.9 million & \\
+		Europe & 739.2 million & \\
+		China & 1.36 billion & \\
+		India & 1.24 billion & \\
+		Indonesia & 238 million & \\
+		Brazil & 201 million & \\
+		Russia & 144 million & \\
+		Japan & 127 million & \\
+		Mexico & 118 million & \\
+		Vietnam & 90.4 million & \\
+		Germany & 80.5 million & \\
+		France & 65.8 million & \\
+		Great Britain & 63.7 million & \\
+		Italy & 59.9 million & \\
+		South Africa & 53.0 million & \\
+		South Korea & 50.2 million & \\
+		Spain & 46.7 million & \\
+		Kenya & 44.3 million & \\
+		Argentina & 40.1 million & \\
+		Poland & 38.5 million & \\
+		Malaysia & 29.9 million & \\
+		Taiwan & 23.4 million & \\
+		Australia & 23.3 million & \\
+		Netherlands & 16.8 million & \\
+		Belgium & 11.2 million & \\
+		Greece & 10.8 million & \\
+		Portugal & 10.6 million & \\
+		Czech Republic & 10.5 million & \\
+		Sweden & 9.63 million & \\
+		Austria & 8.50 million & \\
+		UAE & 8.26 million & \\
+		Israel & 8.09 million & \\
+		Hong Kong & 7.18 million & \\
+		Denmark & 5.62 million & \\
+		Singapore & 5.40 million & \\
+		Scotland & 5.30 million & \\
+		Ireland & 4.59 million & \\
+	\end{tabularx}
+\end{table}
+\subsection{Todo}
+	\begin{itemize}
+		\item population density
+		\item population history
+		\item cities, provinces, states
+	\end{itemize}
+
+\section{Geography}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{ X X X X X }
+		Location & Area & Width & Diagonal & Height \\
+		\hline
+		Canada & \SI{9.98E6}{\square\km} & \SI{4800}{\km} (3000 miles) & & \\
+		USA & \SI{9.83E6}{\square\km} & \SI{4180}{\km} & \SI{4500}{\km} (2800 miles) & \\
+		Russia & \SI{17.1E6}{\square\km} & & & \\
+		China & \SI{9.71E6}{\square\km} & & & \\
+		France & \SI{675E3}{\square\km} & & & \\
+		Spain & \SI{503E3}{\square\km} & & & \\
+		Japan & \SI{378E3}{\square\km} & & & \\
+		Germany & \SI{357E3}{\square\km} & & & \\
+		UK & \SI{224E3}{\square\km} & & & \\
+	\end{tabularx}
+\end{table}
+\subsection{Todo}
+	\begin{itemize}
+		\item cities, provinces, states
+	\end{itemize}
+
+\section{Technology}
+Hmmmmm.
+
+\section{Economy}
+Hmmmmm.
+
+\section{Animals}
+Hmmmmm.
+
+\section{Plants}
+Hmmmmm.
+
+\section{Biology}
+Hmmmmm.
+
+\section{Architecture}
+Hmmmmm.
+
+\section{History}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X }
+		Period & Begin & End \\
+		\hline
+		Ancient Greek (archaic) & 900 BC & 500 BC \\
+		Ancient Greek (classical) & 500 BC & 300 BC \\
+		Ancient Greek (hellenistic) & 300 BC & 600 AD \\
+		Roman empire (west) & 27 BC & 476 AD \\
+		Roman empire (east) & 330 & 1453 \\
+		Middle ages/Medieval period & 400 & 1400 \\
+		Renaissance & 1300 & 1600 \\
+		Industrial revolution & 1760 & 1830 \\
+		Baroque period & 1590 & 1725 \\
+		Classical period & 1730 & 1820 \\
+		Romantic period & 1815 & 1910 \\
+		WWI & 1914 & 1918 \\
+		WWII & 1939 & 1945 \\
+		Great Depression & 1929 & Late 1930s, Mid 1940s \\
+	\end{tabularx}
+\end{table}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{\textwidth}{ X X X X }
+		Person & Birth & Death & Description \\
+		\hline
+		Socrates & 469 BC & 399 BC & \\
+		Aristotle & 384 BC & 322 BC & \\
+		Julius Caesar (roman emperor) & 100 BC & 44 BC \\
+		Augustus (roman emperor) & 63 BC & 14 AD \\
+		Nero (roman emperor) & 37 & 68 \\
+		Constantine I (roman emperor) & 272 & 337 \\
+		Charlemange & 740s & 814 \\
+		Martin Luther & 1483 & 1546 \\
+		Queen Elizabeth I & 1533 & 1603 \\
+		James Watt & 1736 & 1819 \\
+	\end{tabularx}
+\end{table}
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X }
+		Event & Date & Description \\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\section{Literature}
+Hmmmmm.
+
+
+\end{document}
