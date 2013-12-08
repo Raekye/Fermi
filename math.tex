@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage[left=1cm,top=1.2cm,right=1cm,bottom=1.2cm]{geometry}
+\usepackage{tabularx}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Math}
+\date{\today}
+\author{Adrian}
+\maketitle
+
+\section{Prelude}
+Some math notes for myself. You can tell I'm not great at this, as the good math people know these off the top of their heads :P
+
+\section{General Notes}
+\begin{itemize}
+	\item Area of circumcircle of a triangle: $R = \frac{abc}{4A}$
+	\item Sum of roots of polymonial: $-\frac{b}{a}$
+	\item Product of roots of polynomial of degree $n$: ${-1}^{n}\frac{z}{a}$
+	\item Sum of squares of root of a polynomial: $-\frac{b + 2c}{a}$
+	\item Binomial theorem: $(x + y)^n = \sum_{k=0}^{n} {n \choose k}x^{n - k}y^k$
+	\item Sum of cubes: $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$
+	\item Difference of cubes: $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$
+	\item Sum of squares: $\sum_{k=1}^{n} k^2 = \frac{n(n + 1)(2n + 1)}{6}$
+	\item Sum of cubes: $\sum_{k=1}^{n} k^3 = (\frac{n(n + 1)}{2})^2$
+	\item Sum of fourth power: $\sum_{k}^{n} k^4 = \frac{n(2n + 1)(n + 1)(3n^2 + 3n - 1)}{30}$
+	\item Sum of fifth power: $\sum_{k}^{n} k^5 = \frac{n^{2}(2n^2 + 2n - 1)(n + 1)^2}{12}$
+	\item Inequality of arithmetic and geometric means: $\sqrt[n]{x_{1}x_{2}\cdots{}x_{n}} \leq \frac{x_1 + x_2 + \cdots + x_n}{n}$
+	\begin{itemize}
+		\item Direct consequence: $\sqrt{ab} \leq \frac{a + b}{2} \leq \sqrt{\frac{a^2 + b^2}{2}}$
+	\end{itemize}
+	\item Convex functions inequality: $f(ty + (1 - t)x) \leq tf(y) + (1 - t)f(x)$
+	\item Jensen's Inequality: $f(\sum_{k=1}^{n} t_{k}x_{k}) \leq \sum_{k=1}^{n} t_{k}f(x_{k})$ where $\sum_{k=1}^{n} t_k = 1$
+	\begin{itemize}
+		\item Direct consequence: $f(\frac{\sum_{k=1}^{n} x_k}{n}) \leq \frac{\sum{k=1}^{n} f(x_{k})}{n}$
+	\end{itemize}
+\end{itemize}
+
+\section{Taylor Series Expansions}
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{ X X X }
+		Function & Expansion & Region of convergence \\
+		\hline
+		$\frac{1}{x}$ & $\sum_{k=0}^{\infty} (-1)^{k}(x - 1)^{k}$ & $|x - 1| < 1$ \\
+		$\frac{1}{x + 1}$ & $\sum_{k=0}^{\infty} (-1)^{k}(x)^{k}$ & $|x| < 1$ \\
+		$\ln(x)$ & $\sum_{k=0}^{\infty}(-1)^{k}\frac{(x - 1)^{k}}{k}$ & $0 < x \leq 2$ \\
+		$e^x$ & $\sum_{k=0}^{\infty}\frac{x^k}{k!}$ & $\mathbb{R}$ \\
+		$\sin(x)$ & $\sum_{k=0}^{\infty} (-1)^{k}\frac{x^{2n + 1}}{(2n + 1)!}$ & \\
+		$\cos(x)$ & $\sum_{k=0}^{\infty} (-1)^{k}\frac{x^{2n}}{(2n)!}$ & \\
+	\end{tabularx}
+\end{table}
+
+\end{document}
