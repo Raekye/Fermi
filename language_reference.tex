@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[left=1cm,top=1.2cm,right=1cm,bottom=1.2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{numprint}
+\usepackage{listings}
+
+\begin{document}
+
+\title{Programming Language Reference}
+\author{Adrian}
+\date{\today}
+\maketitle
+
+\section{Prelude}
+Hmmmmm.
+
+\section{Ternary Operator}
+\begin{longtabu} to 0.75\linewidth { X X }
+	C & \lstinline$a ? b : c$ \\
+	Lisp & \lstinline$if a b c$ \\
+	Haskell & \lstinline$(if a then b else c)$ \\
+	Erlang & \lstinline$case A of true -> B; false -> C end$ \newline \lstinline$if A == true -> B; true -> C end$ \\
+	Python & \lstinline$b if a else c$ \\
+	Ruby & \lstinline$if a then b elseif d then e else c end$ \newline \lstinline$(a \&\& b) || c$ \\
+	Perl & \lstinline$a ? b : c$ \\
+\end{longtabu}
+
+\section{List Construction}
+\begin{longtabu} to 0.75\linewidth { X X }
+	Lisp & \lstinline$(cons 1 (cons 2 nil))$ \\
+	Scala & \lstinline$1 :: 2 :: Nil$ \\
+	Haskell & \lstinline$1 : 2 : []$ \\
+	Erlang & \lstinline$[1 | [2 | []]]$ \\
+\end{longtabu}
+
+\section{Arrays}
+Hmmmm
+
+\section{List API}
+Hmmmm
+
+\section{List Comprehensions}
+Hmmmm
+
+\section{C++ Templates}
+Hmmmm
+
+\section{C Typedefs}
+Hmmmm
+
+\section{Lambdas}
+Hmmmm
+
+\section{Exceptions}
+Hmmmm
+
+\section{Objective-C Blocks}
+Hmmmm
+
+\section{Operator Precedence}
+Hmmmm
+
+\section{For Loops}
+Hmmmm
+
+\section{To learn}
+\begin{itemize}
+	\item perl
+	\item pascal
+	\item cobol
+	\item fortran
+	\item lua
+\end{itemize}
+
+\end{document}
