@@ -39,13 +39,37 @@ Hmmmmm.
 \end{longtabu}
 
 \section{Arrays}
-Hmmmm
+\begin{itemize}
+	\item C
+	\item Java
+	\item Scala
+\end{itemize}
 
 \section{List API}
-Hmmmm
+\subsection{Python}
+\begin{lstlisting}[language=Python]
+li.append(x)
+li.index(x)
+li.insert(i, x)
+li.pop(i = -1)
+li.remove(x)
+len(li)
+li.reverse()
+\end{lstlisting}
+
+\subsection{Ruby}
+\begin{lstlisting}[language=Ruby]
+
+\end{lstlisting}
 
 \section{List Comprehensions}
-Hmmmm
+\begin{longtabu} to 0.75\linewidth { X X }
+	Python & \lstinline$[x ** 2 for x in range(10) if x ** 2 > 3]$ \\
+	Ruby & \lstinline$(1..10).select \{ |x| x ** 2 > 3 \}.collect \{ |X| 2 * x \}$ \\
+	Scala & \lstinline$for (x <- 0 until 10 if x * x > 3) yield 2 * x$ \\
+	Erlang & \lstinline$[2 * X || X <- lists:seq(0, 10), X * X > 3]$ \\
+	Haskell & \lstinline$[2 * x | x <- [0..10], x ^ 2 > 3]$ \\
+\end{longtabu}
 
 \section{C++ Templates}
 Hmmmm
@@ -54,6 +78,15 @@ Hmmmm
 Hmmmm
 
 \section{Lambdas}
+\begin{longtabu} to 0.75\linewidth { X X }
+	Javascript & \lstinline$function foo(x) \{ var y = x * 2; return y; \}$ \\
+	Scala & \lstinline$(x: Int) => { val y = x * 2; /*newline*/ return x; }$ \\
+	Ruby & \lstinline$lambda do |x| y = x * 2; return y; end$ \newline \lstinline$lambda \{ |x| y = x * 2; return y; \}$ \\
+	Haskell & \lstinline$\\x -> x * 2$ \\
+	Erlang & \lstinline$fun(Self, args) -> args; (_, X) -> X * 2 end$
+\end{longtabu}
+
+\section{Y-Combinator}
 Hmmmm
 
 \section{Exceptions}
@@ -65,8 +98,86 @@ Hmmmm
 \section{Operator Precedence}
 Hmmmm
 
-\section{For Loops}
+\section{Iteration}
 Hmmmm
+
+\section{Ranges}
+\begin{longtabu} to 0.75\linewidth { X X X }
+	Language & Exclusive & Inclusive \\
+	\hline
+	Scala & \lstinline$0 until n$ & \lstinline$0 to n$ \\
+	Ruby & \lstinline$0...n$ & \lstinline$0..n$ \\
+	Python & \lstinline$range(0, n)$ & \lstinline$range(0, n + 1)$ \\
+	Haskell & \lstinline$[0..n - 1]$ & \lstinline$[0..n]$ \\
+	Erlang & \lstinline$lists:seq(0, n - 1)$ & \lstinline$lists:seq(0, n)$ \\
+\end{longtabu}
+
+\section{Math}
+\subsection{Exponentiation}
+\begin{longtabu} to 0.75\linewidth { X X }
+	C & \lstinline$pow(x, y)$ \\
+	Scala & \lstinline$Math.pow(x, y)$ \\
+	Java & \lstinline$Math.pow(x, y)$ \\
+	Javascript & \lstinline$Math.pow(x, y)$ \\
+	Erlang & \lstinline$math:pow(x, y)$ \\
+	Ruby & \lstinline$x ** y$ \\
+	Python & \lstinline$x ** y$ \\
+	Haskell & \lstinline$(\^) :: (Num a, Integral b) => a -> b -> a$ \newline \lstinline$(\^\^) :: (Fractional a, Integral b) => a -> b -> a$ \newline \lstinline$(**) :: Floating a => a -> a -> a$ \\
+\end{longtabu}
+
+\subsection{Division}
+\begin{longtabu} to 0.75\linewidth { X X X X }
+	Family & Integer & Decimal & Truncate towards \\
+	\hline
+	C & \lstinline$a / b$ & \lstinline$(double) a / b$ & \\
+	Python & \lstinline$a // b$ & \lstinline$a / b$ & \\
+	Ruby & \lstinline$a / b$ & \lstinline$a.to_f / b$ & \\
+	Erlang & \lstinline$A div B$ \newline \lstinline$floor(A / B)$ & \lstinline$A / B$ & \\
+	Haskell & \lstinline$quot a b$ \newline \lstinline$div a b$ & \lstinline$a / b$ & \\
+	Lisp & \lstinline$(floor (/ a b))$ & \lstinline$(/ a b)$ & \\
+\end{longtabu}
+
+\subsection{Remainder}
+\begin{longtabu} to 0.75\linewidth { X X X }
+	Family & Syntax & Same sign as \\
+	\hline
+	C & \lstinline$a \% b$ & Dividend \\
+	Haskell & \lstinline$rem a b$ & Dividend \\
+	Haskell & \lstinline$mod a b$ & Divisor \\
+	Erlang & \lstinline$a rem b$ & Dividend \\
+	Python & \lstinline$a \% b$ & Divisor \\
+	Ruby & \lstinline$a \% b$ \newline \lstinline$modulo(a, b)$ & Divisor \\
+	Ruby & \lstinline$remainder(a, b)$ & Dividend \\
+	Lisp & \lstinline$(modulo a b)$ & Divisor \\
+	Lisp & \lstinline$(remainder a b)$ & Dividend \\
+
+\end{longtabu}
+
+\section{Haskell Integer Types}
+\begin{longtabu} to 0.75\linewidth { X X X }
+	Instance & Classes & Description \\
+	\hline
+	Int & Num, Real, Integral & \\
+	Integer & Num, Real, Integral & \\
+	Float & Num, Real, RealFrac, Floating, RealFloat & \\
+	Double & Num, Real, RealFrac, Floating, RealFloat & \\
+\end{longtabu}
+\begin{longtabu} to 0.75\linewidth { X X X }
+	Class & Extends & Description \\
+	\hline
+	Num & & \\
+	Real & Num & \\
+	Fractional & Num & \\
+	Integral & Real & \\
+	RealFrac & Real, Fractional & \\
+	Floating & Fractional & \\
+	RealFloat & RealFrac, Floating & \\
+\end{longtabu}
+
+\section{Gotchas}
+\begin{itemize}
+	\item Quot truncates towards 0, and rem has the same sign as the dividend. Div truncates towards negative infinity, and mod has the same sign as the divisor
+\end{itemize}
 
 \section{To learn}
 \begin{itemize}
