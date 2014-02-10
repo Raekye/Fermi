@@ -27,6 +27,7 @@ Hmmmmm.
 	Erlang & \lstinline$case A of true -> B; false -> C end$ \newline \lstinline$if A == true -> B; true -> C end$ \\
 	Python & \lstinline$b if a else c$ \\
 	Ruby & \lstinline$if a then b elseif d then e else c end$ \newline \lstinline$(a \&\& b) || c$ \\
+	Scala & \lstinline$if (a) b else c$ \\
 	Perl & \lstinline$a ? b : c$ \\
 \end{longtabu}
 
@@ -36,6 +37,7 @@ Hmmmmm.
 	Scala & \lstinline$1 :: 2 :: Nil$ \\
 	Haskell & \lstinline$1 : 2 : []$ \\
 	Erlang & \lstinline$[1 | [2 | []]]$ \\
+	Ruby & \lstinline$[] << 1 << 2$ \\
 \end{longtabu}
 
 \section{Arrays}
@@ -52,15 +54,67 @@ li.append(x)
 li.index(x)
 li.insert(i, x)
 li.pop(i = -1)
-li.remove(x)
+li.remove(x) # void
 len(li)
 li.reverse()
 \end{lstlisting}
 
 \subsection{Ruby}
 \begin{lstlisting}[language=Ruby]
+a + b # extend
+a & b # intersection
+a - b # array difference
+a | b # union
+li.collect { |x| block } # map
+li.count
+li.count(x) # occurences of x
+li.delete(x) # returns x
+li.delete_at(i) # returns x
+li.delete_if { |item| block } # list of elements deleted
+li.each { |x| block }
+li.each_index { |i| block }
+li.empty?
+li.index(x)
+li.index { |item| block }
+li.drop(n) # returns last length - n elements
+li.first
+li.first(n) # returns first n elements
+li.last(n) # returns last n elements
+li.take(n) # first n elements
+li.insert(i, obj...)
+li.map.with_index { |x, i| block }
+li.pop # end
+li.push(obj, ...) # end
+li.shift # front
+li.unshift(obj, ...) front
+li.slice
+li.sort
+li.sort { |a, b| block }
+li.zip(arr, ...) # merges elements, creating li.size lists
+\end{lstlisting}
+
+\subsection{Javascript}
+\begin{lstlisting}
 
 \end{lstlisting}
+
+\subsection{Java}
+\begin{lstlisting}[language=Java]
+
+\end{lstlisting}
+
+\subsection{C++}
+\begin{lstlisting}[language=C++]
+
+\end{lstlisting}
+
+\subsection{Scala}
+\begin{lstlisting}
+
+\end{lstlisting}
+
+\section{Slicing}
+Hmmmmm
 
 \section{List Comprehensions}
 \begin{longtabu} to 0.75\linewidth { X X }
@@ -87,10 +141,26 @@ Hmmmm
 \end{longtabu}
 
 \section{Y-Combinator}
-Hmmmm
+\begin{lstlisting}
+function Y(le) {
+    return (function(f) {
+        return f(f);
+    })(function(f) {
+        return le(function(x) {
+            return f(f)(x);
+        });
+    });
+}
+
+var factorial = Y(function(recurse) {
+    return function(n) {
+        return n == 0 ? 1 : n * recurse(n - 1);
+    };
+});
+\end{lstlisting}
 
 \section{Exceptions}
-Hmmmm
+Java, Scala, Python, Ruby, C++, Javascript, PHP
 
 \section{Objective-C Blocks}
 Hmmmm
@@ -99,7 +169,7 @@ Hmmmm
 Hmmmm
 
 \section{Iteration}
-Hmmmm
+Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 
 \section{Ranges}
 \begin{longtabu} to 0.75\linewidth { X X X }
@@ -172,6 +242,16 @@ Hmmmm
 	RealFrac & Real, Fractional & \\
 	Floating & Fractional & \\
 	RealFloat & RealFrac, Floating & \\
+\end{longtabu}
+
+\section{Comments}
+Hmmmmm
+
+\section{Boolean and Logical Operators}
+\begin{longtabu} to 0.75\linewidth{ X X X  X X X X }
+	Language & And & Or & Not & Type & True & False \\
+	\hline
+	Haskell & \lstinline$\&\&$ & \lstinline$||$ & \lstinline$not$ & \lstinline$Bool$ & \lstinline$True$ & \lstinline$False$ \\
 \end{longtabu}
 
 \section{Gotchas}
