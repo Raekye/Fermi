@@ -8,6 +8,17 @@
 \usepackage{tabu}
 \usepackage{numprint}
 \usepackage{listings}
+\usepackage{footnote}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue
+}
+
+\lstset{
+	basicstyle=\ttfamily%\footnotesize
+}
 
 \begin{document}
 
@@ -126,10 +137,63 @@ Hmmmmm
 \end{longtabu}
 
 \section{C++ Templates}
-Hmmmm
+\subsection{Function Templates}
+\begin{lstlisting}[language=C++]
+template <class T> // or typename
+T addTwo(T data) {
+	return T + 2;
+}
 
+addTwo(2);
+\end{lstlisting}
+class vs typename: \url{http://stackoverflow.com/questions/213121/use-class-or-typename-for-template-parameters}
+\subsection{Class Templates}
+\begin{lstlisting}[language=C++]
+template <class T>
+class Thing {
+	T data;
+public:
+	T get() const {
+		return data;
+	}
+	void set(T in) {
+		data = in;
+	}
+}
+
+Thing<int> intThing;
+intThing.set(42);
+intThing.get(); // 42
+\end{lstlisting}
+more: \url{http://www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part-1}
 \section{C Typedefs}
-Hmmmm
+\begin{lstlisting}[language=C]
+typedef int thing;
+thing a; // OK
+unsigned thing a; // not OK, can't mix with prefixes
+
+typedef struct {
+	int things[8];
+	char moreStuff[4];
+} s1; // can't refer to self
+typedef struct node {
+	int data;
+	struct node *next;
+} Node;
+
+// function pointer typedef
+typedef int (*MathFunc)(float, int);
+ 
+int do_math(float arg1, int arg2) {
+    return arg2;
+}
+ 
+int call_a_func(MathFunc call_this) {
+    int output = call_this(5.5, 7);
+    return output;
+}
+\end{lstlisting}
+more: \url{http://en.wikipedia.org/wiki/Typedef}
 
 \section{Lambdas}
 \begin{longtabu} to 0.75\linewidth { X X }
@@ -166,7 +230,7 @@ Java, Scala, Python, Ruby, C++, Javascript, PHP
 Hmmmm
 
 \section{Operator Precedence}
-Hmmmm
+\url{http://en.wikipedia.org/wiki/Comparison_of_programming_languages_%28syntax%29#Comments}
 
 \section{Iteration}
 Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
@@ -245,8 +309,42 @@ Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 \end{longtabu}
 
 \section{Comments}
-Hmmmmm
+\subsection{Inline comments}
+\begin{longtabu} to 0.75\linewidth { X X }
+	C \newline
+    C++ \newline
+    Java \newline
+    Scala & \lstinline$// comment$ \\
+	\\[-0.3em]
+	Python \newline
+    Perl \newline
+    Ruby & \lstinline$# comment$ \\
+	\\[-0.3em]
+	Lisp & \lstinline$; comment$ \\
+	Haskell & \lstinline$-- comment$ \\
+	Erlang & \lstinline$\% comment$ \\
+\end{longtabu}
 
+\subsection{Block comments \& docstrings}
+\begin{longtabu} to 0.75\linewidth { X X }
+	C \newline
+    C++ \newline
+    Java \newline
+    Scala & \lstinline$/* comment */$ \\
+    \\[-0.3em]
+	Python & \lstinline$""" docstring """$ \\
+    Perl (part of POD) & \lstinline$=for comment$ \newline
+    \lstinline$comment$ \newline
+    \lstinline$=cut$  \\
+	\\[-0.3em]
+    Ruby & \lstinline$=begin$ \newline
+    \lstinline$comment$ \newline
+    \lstinline$=end$ \\
+    \\[-0.3em]
+	Lisp & \lstinline$#| comment |#$ \\
+	Haskell & \lstinline$\{- comment -\}$ \\
+\end{longtabu}
+more: \url{http://en.wikipedia.org/wiki/Comparison_of_programming_languages_%28syntax%29#Comments}
 \section{Boolean and Logical Operators}
 \begin{longtabu} to 0.75\linewidth{ X X X  X X X X }
 	Language & And & Or & Not & Type & True & False \\
