@@ -119,7 +119,7 @@ Hmmmmm
 \section{List Comprehensions}
 \begin{longtabu} to 0.75\linewidth { X X }
 	Python & \lstinline$[x ** 2 for x in range(10) if x ** 2 > 3]$ \\
-	Ruby & \lstinline$(1..10).select \{ |x| x ** 2 > 3 \}.collect \{ |X| 2 * x \}$ \\
+	Ruby & \lstinline$(1..10).select \{ |x| x ** 2 > 3 \}.collect \{ |x| 2 * x \}$ \\
 	Scala & \lstinline$for (x <- 0 until 10 if x * x > 3) yield 2 * x$ \\
 	Erlang & \lstinline$[2 * X || X <- lists:seq(0, 10), X * X > 3]$ \\
 	Haskell & \lstinline$[2 * x | x <- [0..10], x ^ 2 > 3]$ \\
@@ -137,7 +137,7 @@ Hmmmm
 	Scala & \lstinline$(x: Int) => { val y = x * 2; /*newline*/ return x; }$ \\
 	Ruby & \lstinline$lambda do |x| y = x * 2; return y; end$ \newline \lstinline$lambda \{ |x| y = x * 2; return y; \}$ \\
 	Haskell & \lstinline$\\x -> x * 2$ \\
-	Erlang & \lstinline$fun(Self, args) -> args; (_, X) -> X * 2 end$
+	Erlang & \lstinline$fun(Self, args) -> args; (_, X) -> X * 2 end$ \\
 \end{longtabu}
 
 \section{Y-Combinator}
@@ -170,6 +170,24 @@ Hmmmm
 
 \section{Iteration}
 Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
+\subsection{Ruby}
+\begin{lstlisting}[language=Ruby]
+for i in 0..n
+	# hmmmm
+end
+\end{lstlisting}
+\subsection{Fortran}
+\begin{lstlisting}
+do i=0,n
+	! hmmm
+end do
+\end{lstlisting}
+\subsection{Objective-C}
+\begin{lstlisting}
+for (id each in array) {
+	// hmmm
+}
+\end{lstlisting}
 
 \section{Ranges}
 \begin{longtabu} to 0.75\linewidth { X X X }
@@ -180,6 +198,7 @@ Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 	Python & \lstinline$range(0, n)$ & \lstinline$range(0, n + 1)$ \\
 	Haskell & \lstinline$[0..n - 1]$ & \lstinline$[0..n]$ \\
 	Erlang & \lstinline$lists:seq(0, n - 1)$ & \lstinline$lists:seq(0, n)$ \\
+	Perl & \lstinline$(0..\$n - 1)$ & \lstinline$(0..n)$ \\
 \end{longtabu}
 
 \section{Math}
@@ -193,6 +212,7 @@ Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 	Ruby & \lstinline$x ** y$ \\
 	Python & \lstinline$x ** y$ \\
 	Haskell & \lstinline$(\^) :: (Num a, Integral b) => a -> b -> a$ \newline \lstinline$(\^\^) :: (Fractional a, Integral b) => a -> b -> a$ \newline \lstinline$(**) :: Floating a => a -> a -> a$ \\
+	Fortran & \lstinline$**$ \\
 \end{longtabu}
 
 \subsection{Division}
@@ -218,7 +238,7 @@ Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 	Python & \lstinline$a \% b$ & Divisor \\
 	Ruby & \lstinline$a \% b$ \newline \lstinline$modulo(a, b)$ & Divisor \\
 	Ruby & \lstinline$remainder(a, b)$ & Dividend \\
-	Lisp & \lstinline$(modulo a b)$ & Divisor \\
+	Lisp & \lstinline$(modulo a b)$ & Divisor \\it
 	Lisp & \lstinline$(remainder a b)$ & Dividend \\
 
 \end{longtabu}
@@ -245,7 +265,12 @@ Java, C++, Python, Scala, Ruby, PHP, Javascript, Erlang, Haskell, Lisp
 \end{longtabu}
 
 \section{Comments}
-Hmmmmm
+\begin{longtabu} to 0.75\linewidth{ X X X }
+	Language & Single line & Multiline \\
+	\hline
+	Fortran & \lstinline$!$ & TODO \\
+	Haskell & \lstinline$--$ & TODO \\
+\end{longtabu}
 
 \section{Boolean and Logical Operators}
 \begin{longtabu} to 0.75\linewidth{ X X X  X X X X }
@@ -254,9 +279,26 @@ Hmmmmm
 	Haskell & \lstinline$\&\&$ & \lstinline$||$ & \lstinline$not$ & \lstinline$Bool$ & \lstinline$True$ & \lstinline$False$ \\
 \end{longtabu}
 
+\section{Folds}
+\begin{longtabu} to 0.75\linewidth { X X X }
+	Language & Fold left & Fold right \\
+	\hline
+	Haskell & \lstinline$foldl' (\ xs x -> x : xs) [] [1, 2, 3]$ & \lstinline$foldr' fn li$ \\
+\end{longtabu}
+
 \section{Gotchas}
 \begin{itemize}
 	\item Quot truncates towards 0, and rem has the same sign as the dividend. Div truncates towards negative infinity, and mod has the same sign as the divisor
+\end{itemize}
+
+\section{To add}
+\begin{itemize}
+	\item literals
+	\item car/cdr (haskell fst snd)
+	\item scheme fold is (lambda (x accum) accum)
+	\item hex characters
+	\item erlang map
+	\item string format
 \end{itemize}
 
 \section{To learn}
@@ -266,6 +308,10 @@ Hmmmmm
 	\item cobol
 	\item fortran
 	\item lua
+	\item R
+	\item ocaml
+	\item go
+	\item groovy
 \end{itemize}
 
 \end{document}
