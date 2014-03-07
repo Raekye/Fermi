@@ -373,11 +373,20 @@ more: \url{http://en.wikipedia.org/wiki/Comparison_of_programming_languages_%28s
 	Haskell & \lstinline$\&\&$ & \lstinline$||$ & \lstinline$not$ & \lstinline$Bool$ & \lstinline$True$ & \lstinline$False$ \\
 \end{longtabu}
 
-\section{Folds}
-\begin{longtabu} to 0.75\linewidth { X X X }
-	Language & Fold left & Fold right \\
+\section{Folds and Mapping}
+\begin{longtabu} to 0.75\linewidth { X X X X }
+	Language & Fold left & Fold right & Map\\
 	\hline
-	Haskell & \lstinline$foldl' (\ xs x -> x : xs) [] [1, 2, 3]$ & \lstinline$foldr' fn li$ \\
+	Haskell & \lstinline$foldl' (\ xs x -> x : xs) [] [1, 2, 3]$ & \lstinline$foldr' fn li$ & TODO \\
+	Scheme & \lstinline$(fold (lambda (x accum) accum) initial li)$ & TODO & TODO \\
+	Erlang & TODO & TODO & \lstinline$lists:map(fun (X) -> X * 2 end, [1, 2, 3])$ \\
+\end{longtabu}
+
+\section{Car, Cdr}
+\begin{longtabu} to 0.64\linewidth { X X X }
+	Language & Car & Cdr \\
+	\hline
+	Haskell & \lstinline$head$ & TODO \\
 \end{longtabu}
 
 \section{Gotchas}
@@ -388,11 +397,9 @@ more: \url{http://en.wikipedia.org/wiki/Comparison_of_programming_languages_%28s
 \section{To add}
 \begin{itemize}
 	\item literals
-	\item car/cdr (haskell fst snd)
-	\item scheme fold is (lambda (x accum) accum)
 	\item hex characters
-	\item erlang map
 	\item string format
+	\item imports
 \end{itemize}
 
 \section{To learn}
